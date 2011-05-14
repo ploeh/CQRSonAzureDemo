@@ -1,1 +1,5 @@
 BookingCloudService/*.cscfg
+*/bin/
+*/obj/
+*.user
+*.build.csdef
