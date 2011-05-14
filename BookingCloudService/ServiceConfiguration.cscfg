@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<ServiceConfiguration serviceName="BookingCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration">
+  <Role name="BookingWebRole">
+    <Instances count="2" />
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="BookingWorkerRole">
+    <Instances count="2" />
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="SmtpServerAddress" value="your.smtpserver.here" />
+      <Setting name="SmtpUserName" value="" />
+      <Setting name="SmtpPassword" value="" />
+      <Setting name="EmailSenderSmtpAddress" value="you.email@address.here" />
+      <Setting name="EmailSenderDisplayName" value="The Booking Site" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

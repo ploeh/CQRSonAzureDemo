@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="BookingCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+  <WebRole name="BookingWebRole">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="HttpIn" endpointName="HttpIn" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" />
+    </ConfigurationSettings>
+    <Endpoints>
+      <InputEndpoint name="HttpIn" protocol="http" port="80" />
+    </Endpoints>
+    <LocalResources>
+    </LocalResources>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
+  </WebRole>
+  <WorkerRole name="BookingWorkerRole">
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" />
+      <Setting name="SmtpServerAddress" />
+      <Setting name="SmtpUserName" />
+      <Setting name="SmtpPassword" />
+      <Setting name="EmailSenderSmtpAddress" />
+      <Setting name="EmailSenderDisplayName" />
+    </ConfigurationSettings>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
+  </WorkerRole>
+</ServiceDefinition>
