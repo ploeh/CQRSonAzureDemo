@@ -25,24 +25,15 @@ namespace Ploeh.Samples.Booking.DomainModel.UnitTest
             Assert.True(consumers.SequenceEqual(sut.Consumers));
         }
 
-        [Fact]
-        public void ConsumeConsumesAllConsumers()
+        [Theory, AutoDomainData]
+        public void ConsumeConsumesAllConsumers(CompositeMessageConsumer<object> sut, object message)
         {
-            // Fixture setup
-            var fixture = new Fixture().Customize(new DomainCustomization());
-            var mocks = fixture.CreateMany<Mock<IMessageConsumer<object>>>().ToList();
-            fixture.Inject(mocks.Select(m => m.Object).ToArray());
-
-            var message = fixture.CreateAnonymous<object>();
-
-            var sut = fixture.CreateAnonymous<CompositeMessageConsumer<object>>();
-            // Exercise system
             sut.Consume(message);
-            // Verify outcome
+            var mocks = (from c in sut.Consumers
+                         select Mock.Get(c)).ToList();
             mocks.ForEach(m =>
                 m.Verify(c =>
                     c.Consume(message)));
-            // Teardown
         }
     }
 }
