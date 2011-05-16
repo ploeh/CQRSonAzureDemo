@@ -3,3 +3,4 @@ BookingCloudService/*.cscfg
 */obj/
 *.user
 *.build.csdef
+*.suo
