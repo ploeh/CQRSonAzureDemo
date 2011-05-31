@@ -13,7 +13,7 @@ namespace Ploeh.Samples.Booking.DomainModel.UnitTest
     public class ReservationAcceptedEventFacts
     {
         [Theory, AutoDomainData]
-        public void Test([Frozen]Guid id, ReservationAcceptedEvent sut)
+        public void IdIsCorrect([Frozen]Guid id, ReservationAcceptedEvent sut)
         {
             Assert.Equal<Guid>(id, sut.Id);
         }
