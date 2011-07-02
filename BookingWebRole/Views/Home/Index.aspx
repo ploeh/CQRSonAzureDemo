@@ -15,7 +15,7 @@
 
             $("#datepicker").datepicker({
                 beforeShowDay: getStatusForDate,
-                dateFormat: 'yy.mm.dd',
+                dateFormat: 'yy-mm-dd',
                 onChangeMonthYear: changeMonthYear,
                 onSelect: selectDate
             });
