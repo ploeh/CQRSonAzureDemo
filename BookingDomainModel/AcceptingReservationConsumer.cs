@@ -19,7 +19,7 @@ namespace Ploeh.Samples.Booking.DomainModel
             this.channel = channel;
         }
 
-        #region IMessageConsumer<MakeNewReservationCommand> Members
+        #region IMessageConsumer<MakeReservationCommand> Members
 
         public void Consume(MakeReservationCommand message)
         {

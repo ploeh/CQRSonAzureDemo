@@ -19,7 +19,7 @@ namespace Ploeh.Samples.Booking.DomainModel
             this.repository = repository;
         }
 
-        #region ICommandConsumer<MakeNewReservationCommand> Members
+        #region ICommandConsumer<MakeReservationCommand> Members
 
         public void Consume(MakeReservationCommand command)
         {
