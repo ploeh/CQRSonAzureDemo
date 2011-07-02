@@ -20,7 +20,7 @@ namespace Ploeh.Samples.Booking.WebModel
             this.writer = writer;
         }
 
-        #region IMessageConsumer<DateDepletedEvent> Members
+        #region IMessageConsumer<SoldOutEvent> Members
 
         public void Consume(SoldOutEvent message)
         {
